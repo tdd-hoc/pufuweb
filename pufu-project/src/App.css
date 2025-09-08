@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+.app {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  z-index: 1000;
+  animation: fadeDown 1s ease forwards;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #00ffccaa);
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  background-image: url("/rice-field.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;   /* căn giữa dọc */
+  justify-content: center; /* căn giữa ngang */
+  padding-top: 0;  /* bỏ padding-top */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.45); /* đậm hơn để chữ nổi rõ */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;  /* căn giữa theo chiều dọc */
+  justify-content: space-between; /* đẩy 2 cột ra sát 2 bên */
+  padding: 60px 80px; /* thêm khoảng cách lề trái/phải */
+}
+
+/* Nội dung */
+.content {
+  display: flex;
+  flex-wrap: nowrap; /* không wrap để giữ 2 cột song song */
+  width: 100%;
+  max-width: 1400px;
+  justify-content: space-between; /* đẩy ra 2 bên */
+  align-items: center;
+  text-align: left; /* chữ canh trái */
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Cột trái - phải */
+.column {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+  opacity: 0;
+}
+
+.column.left {
+  animation: slideRight 1.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.column.right {
+  animation: slideLeft 1.5s ease forwards;
+  animation-delay: 0.7s;
+  text-align: left; /* giữ chữ bên phải cũng canh trái */
+}
+
+
+.column h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffdd57;
+}
+
+.column h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #00ffcc;
+}
+
+.column p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;   /* căn giữa khối ul */
+  display: inline-block; /* cho ul thu gọn lại, căn giữa */
+  text-align: left; /* vẫn căn trái nội dung để đẹp */
+}
+
+li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 1s;
+}
+
+li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+li:hover {
+  color: #ffdd57;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(80px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 65px;
+  }
+
+  .column h1 {
+    font-size: 2rem;
+  }
+
+  .column h2 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1rem;
+  }
+}

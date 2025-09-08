@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: url("https://img.freepik.com/free-photo/green-rice-field-background_1150-11114.jpg") 
+              no-repeat center center/cover;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.left {
+  flex: 2;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.left h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.left h2 {
+  font-size: 20px;
+  background: yellow;
+  display: inline-block;
+  padding: 2px 6px;
+}
+
+.left p {
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.right {
+  flex: 1.2;
+  background: #1f4e94;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.right h3 {
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.right .slogan {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.center-box {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.right ul {
+  margin-left: 20px;
+  line-height: 1.6;
+}
